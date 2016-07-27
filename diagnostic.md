@@ -6,21 +6,23 @@ Record your responses inside the fenced code blocks below each question.
     and what are the main task(s) you perform inside an Ember Route?
 
     ```md
-    <!-- your response here -->
+    The main task inside the Ember Router is defining url paths for routes (whether by
+    using the default or specifying). The main task inside an Ember Route is
+    gathering data from a model to be passed onto a template later.
     ```
 
 1.  What is the command to generate a route named `boston` nested under
     `campus`?
 
     ```md
-    <!-- your response here -->
+    ember g route campus/boston
     ```
 
 1.  Suppose you have a nested route at the URL `/campus/boston`. How would you
     use the `link-to` helper to generate an appropriate link?
 
     ```md
-    <!-- your response here -->
+    {{#link-to 'campus.boston'}}{{/link-to}}
     ```
 
 1.  Explain **at least** two differences between the following two route
@@ -35,7 +37,10 @@ Record your responses inside the fenced code blocks below each question.
     ```
 
     ```md
-    <!-- your response here -->
+    1) The top one is a nested route (and the bottom is not), which means that
+    2) it won't overwrite the info that has been rendered from products when a
+    user navigates there, while the bottom one will replace products when navigated
+    to.
     ```
 
 1.  Suppose we have the following route definition:
@@ -48,11 +53,15 @@ Record your responses inside the fenced code blocks below each question.
     value `'123'` inside a Route?
 
     ```md
-    <!-- your response here -->
+    params.movie_id
     ```
 
 1.  Inside a template, how do we reference data provided by a Route?
 
     ```md
-    <!-- your response here -->
+    By calling the model that a Route returns. So if only one, and the model had properties of
+    name and age (it's a person, I guess...), you could call model.name and model.age within
+    handlebars {{}} to access those properties. If the model contains an array, you can
+    call the handlebars helper {{#each model as |your-choice| }} and then the properties of
+    the model can be accessed inside handlebars as yourchoice.property.
     ```
